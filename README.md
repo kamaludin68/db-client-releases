@@ -1,0 +1,92 @@
+# DB Client
+
+One desktop app for your SQL and NoSQL databases. Query, browse and edit
+PostgreSQL, MySQL, MariaDB, ClickHouse, MongoDB and Redis from one fast,
+native app, with no account, no cloud and no server in between.
+
+**Website: <https://dbclient.is-my.app>** ·
+**Downloads: [latest release](https://github.com/kamaludin68/db-client-releases/releases/latest)**
+
+This repository hosts the website and the downloadable builds. To report a
+bug or ask for a feature, [open an issue](https://github.com/kamaludin68/db-client-releases/issues).
+
+> Preview release. The builds are not yet signed, so Windows and macOS warn
+> you the first time you open the app (see [Install](#install)).
+
+## Features
+
+- **SQL editor with autocomplete.** Suggests tables, columns, schemas and
+  keywords from your live schema, resolves aliases, and quotes names
+  correctly for each database. Ctrl+N (Cmd+N) opens a new editor.
+- **Database navigator.** Schemas, tables, views, functions, sequences and
+  more, in a tree grouped like DBeaver.
+- **Edit data in the grid.** Change cells, add and delete rows, review the
+  changes, then save them in one transaction or revert.
+- **Table inspector.** Data preview with an adjustable row limit (20 by
+  default), columns, constraints, indexes, triggers and DDL.
+- **Schema editing.** Dialogs for columns, constraints, indexes and triggers
+  that show the SQL before it runs (PostgreSQL).
+- **Export.** Results as CSV, TSV, JSON, Markdown or SQL INSERT statements.
+- **MongoDB.** A Compass-style document view with an expandable JSON tree;
+  edit documents in mongosh syntax and only the changed fields are saved.
+- **Redis.** Key browser for strings, hashes, lists, sets, sorted sets and
+  streams, plus a command console.
+- **Private by design.** The app connects straight to your database.
+  Passwords are kept in the system keychain (Keychain, Windows Credential
+  Locker, libsecret).
+- **Themes.** VS Code Dark, GitHub Dark, Dracula and VS Code Light.
+
+## Supported databases
+
+| Database | Support |
+|---|---|
+| PostgreSQL | Full, including schema editing |
+| MySQL, MariaDB | Query, browse, edit rows |
+| ClickHouse | Over HTTP(S), with query cancel |
+| MongoDB | Including Atlas (`mongodb+srv://`) |
+| Redis | Standalone servers, with TLS |
+
+All drivers are built in. You can paste a connection URL (for example
+`postgres://user@host:5432/db`) to fill in the connection form.
+
+## Install
+
+Download the file for your system from the
+[latest release](https://github.com/kamaludin68/db-client-releases/releases/latest).
+The app is portable: unpack it and run it.
+
+### Windows 10 / 11 (64-bit)
+
+1. Download `db-client-windows-x64.zip` and extract it, for example to
+   `C:\Apps`.
+2. Run `DB Client\db_client.exe`.
+3. If SmartScreen says it protected your PC, click **More info**, then
+   **Run anyway**.
+
+### macOS 12 or later (Apple silicon and Intel)
+
+1. Download `db-client-macos.zip`, unpack it and drag **DB Client** into
+   **Applications**.
+2. The app isn't notarized yet, so clear the download block once:
+
+   ```sh
+   xattr -dr com.apple.quarantine "/Applications/DB Client.app"
+   ```
+
+   Or open it once, then click **Open Anyway** in
+   **System Settings → Privacy & Security**.
+
+### Linux (x64)
+
+```sh
+# Libraries the app uses (most desktops already have them)
+sudo apt install libgtk-3-0 libsecret-1-0 libegl1 libgles2   # Debian / Ubuntu
+sudo dnf install gtk3 libsecret libglvnd-egl libglvnd-gles  # Fedora
+
+curl -LO https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-linux-x64.tar.gz
+tar -xzf db-client-linux-x64.tar.gz -C ~/.local/share
+~/.local/share/db-client/db_client
+```
+
+Saved passwords use your desktop's keyring (GNOME Keyring or KWallet).
+Runs on Ubuntu 22.04 and newer, and distributions of similar age.
