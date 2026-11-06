@@ -210,9 +210,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
       <h1>One desktop app for your SQL and NoSQL databases</h1>
       <p class="lead">Query, browse and edit PostgreSQL, MySQL, MariaDB, ClickHouse, MongoDB and Redis from one fast, native app. No account, no cloud and no server in between.</p>
       <div class="downloads" id="downloads">
-        <a class="btn" data-os="windows" href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-windows-x64.zip">
+        <a class="btn" data-os="windows" href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-windows-x64-setup.exe">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.5v7H3zm0 13 7.5 1v-7H3zm8.5 1.2L21 21v-8.5h-9.5zm0-15.4v7.2H21V3z"/></svg>
-          Windows <small>x64 · .zip</small>
+          Windows <small>x64 · installer</small>
         </a>
         <a class="btn" data-os="macos" href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-macos.zip">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-.9-2.4-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>
@@ -304,7 +304,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
   <section id="install" class="alt">
     <div class="wrap">
       <h2>Install on your desktop</h2>
-      <p class="sub">The app is portable: unpack it and run it, no installer needed. These preview builds are not yet signed, so your system will warn you the first time you open the app.</p>
+      <p class="sub">These preview builds are not yet signed, so your system will warn you the first time you open the app.</p>
 
       <div class="os-tabs" role="tablist">
         <button role="tab" id="tab-windows" aria-controls="panel-windows" aria-selected="true">Windows</button>
@@ -314,12 +314,11 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
 
       <div class="panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows">
         <ol>
-          <li>Download <a href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-windows-x64.zip"><code>db-client-windows-x64.zip</code></a>.</li>
-          <li>Right-click the file, choose <b>Extract All…</b>, and pick a folder such as <code>C:\Apps</code>.</li>
-          <li>Open the <code>DB Client</code> folder and double-click <code>db_client.exe</code>.</li>
+          <li>Download <a href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-windows-x64-setup.exe"><code>db-client-windows-x64-setup.exe</code></a> and run it.</li>
           <li>If Windows SmartScreen says it protected your PC, click <b>More info</b>, then <b>Run anyway</b>.</li>
+          <li>Follow the setup. It installs for your account only, with no administrator rights needed, and adds DB Client to the Start menu.</li>
         </ol>
-        <p class="note">Requires Windows 10 or 11, 64-bit. To get a Start menu entry, right-click <code>db_client.exe</code> and choose <b>Pin to Start</b>.</p>
+        <p class="note">Requires Windows 10 or 11, 64-bit. Uninstall it from <b>Settings → Apps</b>. Prefer no installer? Download the portable <a href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-windows-x64.zip"><code>db-client-windows-x64.zip</code></a>, unpack it anywhere and run <code>db_client.exe</code>.</p>
       </div>
 
       <div class="panel" id="panel-macos" role="tabpanel" aria-labelledby="tab-macos" hidden>
