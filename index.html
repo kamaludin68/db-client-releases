@@ -207,7 +207,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
   <div class="hero">
     <div class="wrap">
       <div class="eyebrow">Free download · Preview release</div>
-      <h1>One desktop app for your SQL and NoSQL databases</h1>
+      <h1>One app for your SQL and NoSQL databases</h1>
       <p class="lead">Query, browse and edit PostgreSQL, MySQL, MariaDB, ClickHouse, MongoDB and Redis from one fast, native app. No account, no cloud and no server in between.</p>
       <div class="downloads" id="downloads">
         <a class="btn" data-os="windows" href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-windows-x64-setup.exe">
@@ -221,6 +221,10 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
         <a class="btn" data-os="linux" href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-linux-x64.tar.gz">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2.2 0-3.6 1.9-3.6 4.6 0 1.4.4 2.4.1 3.5-.4 1.4-2.6 3.4-3.3 5.8-.4 1.3-.1 2.3.5 2.9-.4.6-.4 1.6.6 2 1.1.5 2.6.2 3.6.9.8.5 2 .4 2.6-.4h3c.6.8 1.8.9 2.6.4 1-.7 2.5-.4 3.6-.9 1-.4 1-1.4.6-2 .6-.6.9-1.6.5-2.9-.7-2.4-2.9-4.4-3.3-5.8-.3-1.1.1-2.1.1-3.5C15.6 3.9 14.2 2 12 2zm-1.5 4a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zm3 0a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zM12 8.6l1.6 1-1.6 1-1.6-1z"/></svg>
           Linux <small>x64 · .tar.gz</small>
+        </a>
+        <a class="btn" data-os="android" href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-android.apk">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22a11.4 11.4 0 0 0-9.84 0L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
+          Android <small>.apk</small>
         </a>
       </div>
       <p class="meta"><span id="version">Latest release</span> · <a href="https://github.com/kamaludin68/db-client-releases/releases">All releases</a> · <a href="#install">How to install</a></p>
@@ -303,13 +307,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: 
 
   <section id="install" class="alt">
     <div class="wrap">
-      <h2>Install on your desktop</h2>
+      <h2>Install</h2>
       <p class="sub">These preview builds are not yet signed, so your system will warn you the first time you open the app.</p>
 
       <div class="os-tabs" role="tablist">
         <button role="tab" id="tab-windows" aria-controls="panel-windows" aria-selected="true">Windows</button>
         <button role="tab" id="tab-macos" aria-controls="panel-macos" aria-selected="false">macOS</button>
         <button role="tab" id="tab-linux" aria-controls="panel-linux" aria-selected="false">Linux</button>
+        <button role="tab" id="tab-android" aria-controls="panel-android" aria-selected="false">Android</button>
       </div>
 
       <div class="panel" id="panel-windows" role="tabpanel" aria-labelledby="tab-windows">
@@ -349,6 +354,16 @@ tar -xzf db-client-linux-x64.tar.gz -C ~/.local/share</code></pre></li>
         </ol>
         <p class="note">Saved passwords use your desktop's keyring (GNOME Keyring or KWallet), so one needs to be running. Built for 64-bit x86; runs on Ubuntu 22.04 and newer, and distributions of similar age.</p>
       </div>
+
+      <div class="panel" id="panel-android" role="tabpanel" aria-labelledby="tab-android" hidden>
+        <ol>
+          <li>On your phone, download <a href="https://github.com/kamaludin68/db-client-releases/releases/latest/download/db-client-android.apk"><code>db-client-android.apk</code></a>.</li>
+          <li>Open the downloaded file. If Android asks, allow your browser or file manager to <b>install unknown apps</b>, then go back and tap <b>Install</b>.</li>
+          <li>If Play Protect warns about an unrecognized app, tap <b>More details</b>, then <b>Install anyway</b>.</li>
+          <li>Open <b>DB Client</b> from your apps.</li>
+        </ol>
+        <p class="note">Requires Android 7.0 or later. The app isn't on Google Play yet; newer versions install over the old one and keep your connections.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -364,7 +379,7 @@ tar -xzf db-client-linux-x64.tar.gz -C ~/.local/share</code></pre></li>
 (function () {
   // Highlight the download for the visitor's system and open its install steps.
   var p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent;
-  var os = /win/i.test(p) ? 'windows' : /mac|iphone|ipad/i.test(p) ? 'macos' : /linux|x11/i.test(p) ? 'linux' : null;
+  var os = /android/i.test(p + ' ' + navigator.userAgent) ? 'android' : /win/i.test(p) ? 'windows' : /mac|iphone|ipad/i.test(p) ? 'macos' : /linux|x11/i.test(p) ? 'linux' : null;
 
   var tabs = document.querySelectorAll('.os-tabs button');
   function show(name) {

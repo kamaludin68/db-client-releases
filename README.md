@@ -91,3 +91,13 @@ tar -xzf db-client-linux-x64.tar.gz -C ~/.local/share
 
 Saved passwords use your desktop's keyring (GNOME Keyring or KWallet).
 Runs on Ubuntu 22.04 and newer, and distributions of similar age.
+
+### Android 7.0 or later
+
+1. On your phone, download `db-client-android.apk` and open it.
+2. If Android asks, allow your browser or file manager to **install unknown
+   apps**, then tap **Install**. If Play Protect warns about an unrecognized
+   app, tap **More details**, then **Install anyway**.
+
+The app isn't on Google Play yet. Newer versions install over the old one
+and keep your connections.
